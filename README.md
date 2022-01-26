@@ -1,4 +1,5 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center">
+    <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -7,60 +8,89 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Acerca de Prueba Nexura
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Prototipado de CRUD para Empleados:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Pasos creación proyecto Laravel
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Datos técnicos:<br>
+Servidor integrador Laragon Full 5.0.0<br>
+PHP 7.4.20-nts<br>
+MySQL 5.7.33<br>
+Apache 2.4.47 Win 64 VS16<br>
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Pasos creación proyecto
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+git clone https://github.com/gmoweb2017/pruebanexura.git
 
-## Laravel Sponsors
+<img src="https://demage.com.co/images/clone.png">
+## Generar archivo .env
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Para generar el archivo .env puedes utilizar el archivo de ejemplo que tiene el repositorio, es tomar el archivo .env.example y renombrarlo como .env <br>
+<img src="https://demage.com.co/images/createdatabase.png">
+<br><br><br>
+Configuración archivo .env <br>
+    a.	Datos de base de datos<br>
+        i.	Localhost<br>
+        ii.	Db Name: pruebanexura<br>
+        iii.	Db UserName: root<br>
+        iv.	DB Password: empty<br>
+        v.	APP_NAME: “Prueba Nexura”<br>
+        vi.	APP_URL: https://pruebanexura.test<br>
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+Luego de renombrar correr el comando composer install
 
-## Contributing
+Luego de correr el comando anterior se procede a escribir php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Instalando npm para uso de Vue.js
 
-## Code of Conduct
+Ejecutar el comando npm install
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Corriendo migraciones para crear base de datos
 
-## Security Vulnerabilities
+Creación de las migraciones para el manejo del modelo de datos entregado
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Paso 1: php artisan make:migration create_areas_table <br>
 
-## License
+Paso 2: php artisan make:migration create_empleados_table<br>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Paso 3: php artisan make:migration create_empleado_rol_table<br>
+
+Paso 4: php artisan make:migration create_roles_table<br>
+
+<img src="https://demage.com.co/images/migraciones.png">
+
+
+
+## Creacion de migración con inserción de datos
+
+<img src="https://demage.com.co/images/migracionData.png">
+
+<br>
+Para correr todas las migraciones se usa el comando
+
+php artisan migrate
+
+## Creación de controlador y modelos
+
+Laravel tiene una herramienta prediseñada que por medio de ejecucion de linea de comandos podra crear los archivos necesarios para controladores y/o modelos.
+
+Ejemplo creación de controlador
+
+php artisan make:controller EjemploController
+
+Ejemplo creación de modelo
+
+php artisan make:model Ejemplo
+
+## Licensia
+
+El Laravel framework es open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Creador
+Genaro Muñoz Obregón
+email: genaro.munoz.obregon@gmail.com
+
